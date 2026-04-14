@@ -95,4 +95,4 @@ generate_pattern()
 cmds.viewFit(allObjects=True)
 print("Pattern generated successfully!")
 
-python test_assignment.py 
+python test_assignment.py

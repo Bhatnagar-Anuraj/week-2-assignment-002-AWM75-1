@@ -94,3 +94,5 @@ generate_pattern()
 # Frame everything in the viewport.
 cmds.viewFit(allObjects=True)
 print("Pattern generated successfully!")
+
+python test_assignment.py 

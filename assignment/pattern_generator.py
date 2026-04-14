@@ -44,10 +44,43 @@ cmds.file(new=True, force=True)
 
 
 def generate_pattern(): 
+     """Generate a procedural pattern of objects using nested loops.
+
+    This function should:
+        1. Define variables for rows, columns, and spacing.
+        2. Use a nested for-loop to iterate over rows and columns.
+        3. Inside the loop, use a conditional to vary object properties.
+        4. Create and position each object.
+    """
+    # --- Configuration variables ---
     num_rows = 6        # Number of rows in the pattern.
     num_cols = 6        # Number of columns in the pattern.
     spacing = 4.0       # Distance between object centers.
     
+    TODO: Create a nested loop that iterates over rows and columns.
+    #
+    # HINT -- your loop structure should look something like this:
+    #
+    #   for row in range(num_rows):
+    #       for col in range(num_cols):
+    #           # Calculate position
+    #           x_pos = col * spacing
+    #           z_pos = row * spacing
+    #
+    #           # TODO: Add a conditional here that changes something
+    #           # based on row, col, or (row + col).
+    #           # For example:
+    #           #   if (row + col) % 2 == 0:
+    #           #       create a cube
+    #           #   else:
+    #           #       create a sphere
+    #
+    #           # TODO: Create the object using cmds.polyCube(), etc.
+    #
+    #           # TODO: Position the object using cmds.move().
+    #
+    #           # TODO: (Optional) Vary the scale using cmds.scale().
+
     # The range thats set will make it so the loop ends onces it reaches the last number in the rows and cols. 
     for row in range(num_rows):
         for col in range(num_cols):
@@ -89,6 +122,9 @@ def generate_pattern():
                 cmds.select(BigCube)
                 cmds.hyperShade(assign=material)
 
+# ---------------------------------------------------------------------------
+# Run the generator
+# ---------------------------------------------------------------------------
 generate_pattern()
 
 # Frame everything in the viewport.

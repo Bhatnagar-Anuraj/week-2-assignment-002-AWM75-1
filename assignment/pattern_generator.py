@@ -3,7 +3,6 @@ import maya.cmds as cmds
 # Clear the scene.
 cmds.file(new=True, force=True)
 
-
 def generate_pattern(): 
 
     num_rows = 6        # Number of rows in the pattern.

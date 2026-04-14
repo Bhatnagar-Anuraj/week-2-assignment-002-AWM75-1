@@ -15,8 +15,8 @@ def generate_pattern():
             # Generates the coradinates 
             cube_x = col * spacing 
             cube_z = row * spacing 
-            # This divides rows and cols by 3 to get either 1, 2, or 3 
-            
+
+            # This divides rows and cols by 3 to see if it equals 0  
             if (row + col) % 3 == 0:
                 # Gives a Name to the small cube
                 cube_name = f"SmallCube_{row}_{col}"
@@ -24,7 +24,7 @@ def generate_pattern():
                 SmallCube = cmds.polyCube(name=cube_name, w=2, h=4, d=1)[0]
                 # This moves the small cube in the air 
                 cmds.move(cube_x + 2.5, 8.51, cube_z, SmallCube)
-            
+            # This divides rows and cols by 3 to see if it equals 1
             elif (row + col) % 3 == 1:
                 # Gives a Name to the Tall cube
                 cube_name = f"TallCube_{row}_{col}"
@@ -32,7 +32,7 @@ def generate_pattern():
                 TallCube = cmds.polyCube(name=cube_name, w=4, h=9, d=2)[0]
                 # This moves the Tall cube in the air 
                 cmds.move(cube_x - 1.5, 2, cube_z, TallCube)
-                
+            # This is what is left if none of them equal 1 or 0     
             else:
                 # Gives a Name to the Big cube
                 cube_name = f"BigCube_{row}_{col}"
